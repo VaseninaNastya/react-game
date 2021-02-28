@@ -23,11 +23,12 @@ class Board extends React.Component {
     });
   }
   render() {
-    const status = 'Next player: X';
-
+    //const status = 'Next player: X';
+   const status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O');
     return (
-      <div>
+      <>
         <h3 className={s.status}>{status}</h3>
+        <div className={s.board_container}>
         <div className={s.board_row}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -43,7 +44,8 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-      </div>
+        </div>
+      </>
     );
   }
 }
