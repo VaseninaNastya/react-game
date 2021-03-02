@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Board.module.scss";
 import Square from "../Square";
 import calculateWinner from "../../utils/calculateWinner.utils.js";
-//import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
+
 
 class Board extends React.Component {
   constructor(props) {
@@ -36,6 +36,8 @@ class Board extends React.Component {
     let status;
     if (winner) {
       status = "Выиграл " + winner;
+    } else if (!this.state.squares.includes(null)){
+      status = "Ничья!";
     } else {
       status = "Следующий ход: " + (this.state.xIsNext ? "X" : "O");
     }
@@ -44,9 +46,7 @@ class Board extends React.Component {
         <h3 className={s.status}>{status}</h3>
         <div className={s.board_container}>
           <div className={s.board_row}>
-
               {this.renderSquare(0)}
-
             {this.renderSquare(1)}
             {this.renderSquare(2)}
           </div>
