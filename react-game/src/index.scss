@@ -1,0 +1,40 @@
+
+
+@import "./components/extends.scss";
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* { box-sizing: border-box }
+
+body {
+  margin: 0;
+  @extend %font-stack-Arial;
+  padding: 0 !important;
+  background-color: white;
+}
+
+ul, li{
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+
+}
+a:hover{
+cursor: pointer;
+}
+li{
+  list-style: none;
+}
+h1{
+font-size: 2rem;
+line-height: 2.5rem;
+letter-spacing: 0em;
+font-weight: normal;
+}
