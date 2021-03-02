@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Board.module.scss";
 //import classNames from "classnames";
 import Square from "../Square"
+import calculateWinner from "../../utils/calculateWinner.utils.js"
 
 class Board extends React.Component {
   constructor(props) {
@@ -23,8 +24,13 @@ class Board extends React.Component {
     });
   }
   render() {
-    //const status = 'Next player: X';
-   const status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O');
+    const winner = calculateWinner(this.state.squares);
+    let status;
+    if (winner) {
+      status = 'Выиграл ' + winner;
+    } else {
+      status = 'Следующий ход: ' + (this.state.xIsNext ? 'X' : 'O');
+    }
     return (
       <>
         <h3 className={s.status}>{status}</h3>
