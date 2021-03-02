@@ -1,49 +1,11 @@
-@import "../extends.scss";
-*,
-*:before,
-*:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-* { box-sizing: border-box }
-
-body {
-  margin: 0;
-  @extend %font-stack-Arial;
-  padding: 0 !important;
-  background-color: white;
-}
-
-ul, li{
-  display: block;
-  padding: 0;
-  margin: 0;
-}
-a{
-  text-decoration: none;
-
-}
-a:hover{
-cursor: pointer;
-}
-li{
-  list-style: none;
-}
-h1{
-font-size: 28px;
-line-height: 32px;
-letter-spacing: 0em;
-font-weight: normal;
-}
 .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game_info {
-    margin-left: 20px;
-  }
-  .game_board{
-      margin: 0 auto;
-  }
+  display: flex;
+  flex-direction: row;
+}
+
+.game_info {
+  margin-left: 20px;
+}
+.game_board{
+    margin: 0 auto;
+}
