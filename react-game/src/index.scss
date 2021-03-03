@@ -51,23 +51,3 @@ button{
   background-color: $colorGray__light;
   height: 100vh;
 }
-
-.button__prime{
-  background-color:  $colorGreen__prime;
-  color: white;
-  font-size: large;
-  padding: 10px;
-  cursor: pointer;
-  margin-bottom: 5px;
-}
-.button__prime:hover,
-.button__prime:active{
-  background-color:  $colorGreen__dark;
-}
-.button__prime:active{
-  box-shadow: 0 0 5px rgba(0,0,0,0.2); 
-}
-.button__makefullscreen{
-  margin-top: 10px;
-  width: 300px;
-}
