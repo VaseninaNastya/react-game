@@ -7,30 +7,16 @@
   align-items: center;
   background-color: white;
   height: calc(100vh - 50px);
-  min-height: 480px;
+  min-height: 520px;
 }
 
 .game_board{
     margin: 0 auto;
     background-color: white;
 }
-.button__prime{
-  background-color:  $colorGreen__prime;
-  color: white;
-  font-size: large;
-  padding: 10px;
-  cursor: pointer;
-  margin-bottom: 5px;
-}
-.button__prime:hover,
-.button__prime:active{
-  background-color:  $colorGreen__dark;
-}
+
 .game_title{
   height: 70px;
   display: flex;
   align-items: center;
-}
-.button__prime:active{
-  box-shadow: 0 0 5px rgba(0,0,0,0.2); 
 }

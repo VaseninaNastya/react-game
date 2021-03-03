@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Game.module.scss";
-//import classNames from "classnames";
+import fullscreen from "../../utils/fullscreen.utils.js";
 import Board from "../Board";
 
 class Game extends React.Component {
@@ -11,8 +11,10 @@ class Game extends React.Component {
     };
   }
   handleClick() {
-    console.log("работает");
     this.setState({ startGame: true });
+  }
+  handleMakeFullScreen(){
+    fullscreen("root")
   }
   updateData = () => {
     this.setState({ startGame: false });
@@ -22,12 +24,13 @@ class Game extends React.Component {
     return (
       <div className={s.game}>
         <h1 className={s.game_title}>Крестики-нолики</h1>
-        <button className={s.button__prime} onClick={() => this.handleClick()}>
+        <button className="button__prime" onClick={() => this.handleClick()}>
           Начать заново
         </button>
         <div className={s.game_board}>
           <Board updateData={this.updateData} startGame = {this.state.startGame}/>
         </div>
+        <button className="button__prime button__makefullscreen" onClick={() => this.handleMakeFullScreen()}>Развернуть на весь экран</button>
       </div>
     );
   }
