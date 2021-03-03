@@ -7,11 +7,11 @@
   align-items: center;
   background-color: white;
   height: calc(100vh - 50px);
+  min-height: 480px;
 }
 
 .game_board{
     margin: 0 auto;
-    padding-bottom: 40px;
     background-color: white;
 }
 .button__prime{
