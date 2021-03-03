@@ -7,9 +7,21 @@ import classNames from "classnames";
 class Board extends React.Component {
   constructor(props) {
     super(props);
+    let squaresArr =Array(9).fill(null)
+    let xIsNextRes = true
+    if(localStorage.getItem("squares")){
+      squaresArr =localStorage.getItem("squares").split(",")
+    }
+    if(localStorage.getItem("xIsNext")){
+      if(localStorage.getItem("xIsNext")==="false"){
+        xIsNextRes = false
+      }else{
+        xIsNextRes = true
+      }
+    }
     this.state = {
-      squares: Array(9).fill(null),
-      xIsNext: true,
+      squares: squaresArr,
+      xIsNext: xIsNextRes,
     };
   }
   renderSquare(i, winner) {
@@ -39,16 +51,35 @@ class Board extends React.Component {
     }
   }
   static getDerivedStateFromProps(props, state) {
+    localStorage.setItem("squares", state.squares)
+    localStorage.setItem("xIsNext", state.xIsNext)
     let result = null;
-    if (
+    if (!props.reStartGame && !props.startGame){
+      console.log("работает");
+        localStorage.setItem("squares", state.squares)
+        localStorage.setItem("xIsNext", state.xIsNext)
+        return       result = {
+          squares: state.squares,
+          xIsNext: state.xIsNext,
+        };
+      }
+      if (props.reStartGame === true && props.startGame === true){
+        localStorage.removeItem("squares")
+        localStorage.removeItem("xIsNext")
+        return result = {
+          squares: Array(9).fill(null),
+          xIsNext: true,
+        };
+      }
+    /*if (
       props.startGame === true &&
       !state.squares.every((item) => item === null)
     ) {
       result = {
-        squares: Array(9).fill(null),
-        xIsNext: true,
+        squares: state.squares,
+        xIsNext: state.xIsNext,
       };
-    }
+    }*/
     return result;
   }
   render() {
@@ -56,7 +87,7 @@ class Board extends React.Component {
     let status;
     if (winner) {
       status = "Выиграл " + winner[0];
-    } else if (!this.state.squares.includes(null)) {
+    } else if (!this.state.squares.includes(null) && !this.state.squares.includes("")) {
       status = "Ничья!";
     } else {
       status = "Следующий ход: " + (this.state.xIsNext ? "X" : "O");
