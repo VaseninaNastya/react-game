@@ -1,15 +1,44 @@
+@import "../extends.scss";
+.square_button {
+  background: #fff;
+  border: 1px solid $colorGray__dark;
+  height: 100px;
+  width: 100px;
+  margin-right: -1px;
+  margin-top: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .square {
-    background: #fff;
-    border: 1px solid #999;
-    height: 100px;
-    width: 100px;
-    margin-right: -1px;
-    margin-top: -1px;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.square__increasedFontSize {
+  font-size: 2rem;
+  transition: font-size 0.2s;
+}
+.square_button:focus {
+  outline: none;
+}
+
+.square__winner {
+  .square {  animation-timing-function: ease-in;
+    animation-iteration-count: 5;
+    animation: fontSize__winner 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;}
+}
+
+@keyframes fontSize__winner {
+  0% {
+    transform: scale(1.5);
   }
-  .square__increasedFontSize{
-    font-size: 2rem;
-    transition: font-size 2s;
+  50% {
+    transform: scale(2);
   }
-  .square:focus {
-    outline: none;
+  100% {
+    transform: scale(1.8);
   }
+}
