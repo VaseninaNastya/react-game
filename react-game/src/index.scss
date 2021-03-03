@@ -24,7 +24,7 @@ ul, li{
 }
 a{
   text-decoration: none;
-
+color: inherit;
 }
 a:hover{
 cursor: pointer;
@@ -49,6 +49,5 @@ button{
 }
 #root{
   background-color: $colorGray__light;
-  min-height: 768px;
   height: 100vh;
 }

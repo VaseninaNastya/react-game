@@ -27,6 +27,7 @@ class Board extends React.Component {
     );
   }
   handleClick(i) {
+    this.props.updateData();
     const winner = calculateWinner(this.state.squares);
     if (!winner) {
       const squares = this.state.squares.slice();
@@ -36,6 +37,19 @@ class Board extends React.Component {
         xIsNext: !this.state.xIsNext,
       });
     }
+  }
+  static getDerivedStateFromProps(props, state) {
+    let result = null;
+    if (
+      props.startGame === true &&
+      !state.squares.every((item) => item === null)
+    ) {
+      result = {
+        squares: Array(9).fill(null),
+        xIsNext: true,
+      };
+    }
+    return result;
   }
   render() {
     const winner = calculateWinner(this.state.squares);
@@ -47,14 +61,10 @@ class Board extends React.Component {
     } else {
       status = "Следующий ход: " + (this.state.xIsNext ? "X" : "O");
     }
-    let boardStyle = s.board_container
-    if(winner){
-      let winLineStyle = "board_container" + winner[2]
-      console.log("winLineStyle",winLineStyle);
-      boardStyle = classNames(
-        s.board_container,
-        s[winLineStyle]
-      )
+    let boardStyle = s.board_container;
+    if (winner) {
+      let winLineStyle = "board_container" + winner[2];
+      boardStyle = classNames(s.board_container, s[winLineStyle]);
     }
     return (
       <>
