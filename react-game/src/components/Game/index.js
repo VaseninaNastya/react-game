@@ -14,6 +14,7 @@ class Game extends React.Component {
         <div className={s.game_board}>
           <Board />
         </div>
+
       </div>
     );
   }

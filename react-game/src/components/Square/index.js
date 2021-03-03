@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 class Square extends React.Component {
   render() {
-    console.log("this.props.winner",this.props.winner);
+
     let baseClass;
     if (
       this.props.winner  &&
