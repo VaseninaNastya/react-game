@@ -38,3 +38,17 @@ line-height: 2.5rem;
 letter-spacing: 0em;
 font-weight: normal;
 }
+button:active, button:focus {
+  outline: none !important;
+}
+button::-moz-focus-inner {
+  border: 0 !important;
+}
+button{
+  border: none;
+}
+#root{
+  background-color: $colorGray__light;
+  min-height: 768px;
+  height: 100vh;
+}

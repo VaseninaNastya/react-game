@@ -16,12 +16,6 @@ class Square extends React.Component {
         s.square__increasedFontSize,
         s.square__winner
       );
-    } else if (this.props.winner && !this.props.value) {
-      baseClass = classNames(
-        s.square_button,
-        s.square__increasedFontSize,
-        s.square__disabled
-      );
     } else if (this.props.squareIsOpening && this.props.value) {
       baseClass = classNames(s.square_button, s.square__increasedFontSize);
     } else {

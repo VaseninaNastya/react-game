@@ -1,11 +1,32 @@
+@import "../extends.scss";
 .game {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+  align-items: center;
+  background-color: white;
 }
 
-.game_info {
-  margin-left: 20px;
-}
 .game_board{
     margin: 0 auto;
+    padding-bottom: 40px;
+    background-color: white;
+}
+.button__prime{
+  background-color:  $colorGreen__prime;
+  color: white;
+  font-size: large;
+  padding: 10px;
+  cursor: pointer;
+}
+.button__prime:hover,
+.button__prime:active{
+  background-color:  $colorGreen__dark;
+}
+.game_title{
+  height: 70px;
+  display: flex;
+  align-items: center;
+
 }

@@ -1,6 +1,7 @@
+@import "../extends.scss";
 .square_button {
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid $colorGray__dark;
   height: 100px;
   width: 100px;
   margin-right: -1px;
@@ -23,9 +24,7 @@
 .square_button:focus {
   outline: none;
 }
-.square__disabled {
-  background-color: rgb(200, 200, 200);
-}
+
 .square__winner {
   .square {  animation-timing-function: ease-in;
     animation-iteration-count: 5;
