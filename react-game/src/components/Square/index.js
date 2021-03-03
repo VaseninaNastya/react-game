@@ -6,8 +6,8 @@ class Square extends React.Component {
   render() {
     let baseClass;
     if (
-      this.props.squareIsOpening=== this.props.shoulBeDisabled &&
-      this.props.shoulBeDisabled === this.props.value &&
+
+      this.props.winner  &&
         this.props.value === this.props.squareIsOpening &&
         this.props.value
     ) {
@@ -16,7 +16,7 @@ class Square extends React.Component {
         s.square__increasedFontSize,
         s.square__winner
       );
-    } else if (this.props.shoulBeDisabled && !this.props.value) {
+    } else if (this.props.winner && !this.props.value) {
       baseClass = classNames(
         s.square_button,
         s.square__increasedFontSize,
