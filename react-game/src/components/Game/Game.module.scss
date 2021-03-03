@@ -20,6 +20,7 @@
   font-size: large;
   padding: 10px;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 .button__prime:hover,
 .button__prime:active{
@@ -29,5 +30,7 @@
   height: 70px;
   display: flex;
   align-items: center;
-
+}
+.button__prime:active{
+  box-shadow: 0 0 5px rgba(0,0,0,0.2); 
 }
