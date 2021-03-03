@@ -1,37 +1,40 @@
-
 import React from "react";
 import s from "./Square.module.scss";
 import classNames from "classnames";
 
-class Square extends React.Component{
- /* constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
-  }*/
+class Square extends React.Component {
   render() {
-    const classes = this.props.squareIsOpening
-    ? classNames(s.square, s.square__increasedFontSize)
-    : classNames(s.square);
+    let baseClass;
+    if (
+      this.props.squareIsOpening=== this.props.shoulBeDisabled &&
+      this.props.shoulBeDisabled === this.props.value &&
+        this.props.value === this.props.squareIsOpening &&
+        this.props.value
+    ) {
+      baseClass = classNames(
+        s.square_button,
+        s.square__increasedFontSize,
+        s.square__winner
+      );
+    } else if (this.props.shoulBeDisabled && !this.props.value) {
+      baseClass = classNames(
+        s.square_button,
+        s.square__increasedFontSize,
+        s.square__disabled
+      );
+    } else if (this.props.squareIsOpening && this.props.value) {
+      baseClass = classNames(s.square_button, s.square__increasedFontSize);
+    } else {
+      baseClass = classNames(s.square_button);
+    }
     return (
-      <button className={classes} onClick={() => this.props.onClick()}>
+      <button className={baseClass} onClick={() => this.props.onClick()}>
+        <div className={s.square}>
         {this.props.value}
+        </div>
       </button>
     );
   }
-};
+}
 
 export default Square;
-
-/*
-const Header = ({ children, colorTheme }) => {
-  const classes = colorTheme
-    ? classNames(s.underline, s.underline__white)
-    : classNames(s.underline, s.underline_gray);
-  return (
-    <>
-      <div className={s.header}>
-        <div className={classes}>{children}</div>
-      </div>
-    </>
-  );
-};*/
