@@ -11,6 +11,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     position: relative;
+    margin-bottom: 10px;
 }
 .board_row{
     display: flex;
@@ -28,7 +29,7 @@
     width: 0%;
     height: 0%;
   }
-/* Horizonal Lines */
+
 .board_container0:after,
 .board_container1:after,
 .board_container2:after{

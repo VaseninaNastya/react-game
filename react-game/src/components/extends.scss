@@ -1,4 +1,3 @@
-
 %font-stack-Arial {
   font-family: "Arial", sans-serif;
   font-size: 14px;
@@ -8,6 +7,13 @@
 $colorGreen__prime: #2aca87;
 $colorGreen__dark: #25ac74;
 $colorGreen__light: rgba(42, 202, 135, 0.5);
+
+$colorOrange__prime: rgb(255, 102, 46);
+$colorOrange__dark: rgb(224, 83, 32);
+$colorOrange__light: rgba(255, 102, 46, 0.5);
+
 $colorGray__lighter: rgb(248, 248, 248);
 $colorGray__light: rgb(240, 240, 240);
-$colorGray__dark: rgb(150, 150, 150)
+$colorGray__dark: rgb(150, 150, 150);
+
+$colorGray__darker: rgb(116, 116, 116);
