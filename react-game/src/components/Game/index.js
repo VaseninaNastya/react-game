@@ -8,10 +8,12 @@ class Game extends React.Component {
     super(props);
     this.state = {
       startGame: true,
+      reStartGame: false,
     };
   }
   handleClick() {
-    this.setState({ startGame: true });
+    this.setState({ startGame: true, 
+      reStartGame: true});
   }
   handleMakeFullScreen(){
     fullscreen("root")
@@ -20,7 +22,6 @@ class Game extends React.Component {
     this.setState({ startGame: false });
  }
   render() {
-    console.log(">>>>>>>state",this.state.startGame );
     return (
       <div className={s.game}>
         <h1 className={s.game_title}>Крестики-нолики</h1>
@@ -28,7 +29,7 @@ class Game extends React.Component {
           Начать заново
         </button>
         <div className={s.game_board}>
-          <Board updateData={this.updateData} startGame = {this.state.startGame}/>
+          <Board updateData={this.updateData} reStartGame ={this.state.reStartGame} startGame = {this.state.startGame}/>
         </div>
         <button className="button__prime button__makefullscreen" onClick={() => this.handleMakeFullScreen()}>Развернуть на весь экран</button>
       </div>
