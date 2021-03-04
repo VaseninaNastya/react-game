@@ -55,7 +55,6 @@ class Board extends React.Component {
     localStorage.setItem("xIsNext", state.xIsNext)
     let result = null;
     if (!props.reStartGame && !props.startGame){
-      console.log("работает");
         localStorage.setItem("squares", state.squares)
         localStorage.setItem("xIsNext", state.xIsNext)
         return       result = {
@@ -71,15 +70,6 @@ class Board extends React.Component {
           xIsNext: true,
         };
       }
-    /*if (
-      props.startGame === true &&
-      !state.squares.every((item) => item === null)
-    ) {
-      result = {
-        squares: state.squares,
-        xIsNext: state.xIsNext,
-      };
-    }*/
     return result;
   }
   render() {
